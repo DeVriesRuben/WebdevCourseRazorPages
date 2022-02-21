@@ -18,6 +18,6 @@ namespace Exercises.Pages.Lesson1
             Directions = directions;
         }
 
-        public List<Direction> Directions { get; set; }
+        public List<Direction> Directions { get; set; } 
     }
 }

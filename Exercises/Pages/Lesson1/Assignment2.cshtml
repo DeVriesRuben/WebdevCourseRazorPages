@@ -6,12 +6,19 @@
 }
 
 @{
-    string url = "?";
+    string url = "?";  
     //maak hier de juiste url
+    foreach (var direction in Model.Directions)
+    {
+        url += "&directions=" + direction;
+    }
 }
 
 <a href="@url&directions=Left">Left</a>
 <!-- voeg zelf de andere richtingen toe -->
+<a href="@url&directions=Right">Right</a>
+<a href="@url&directions=Forward">Forward</a>
+<a href="@url&directions=Backward">Backward</a>
 
 <hr>
 <a href="?">Clear</a>
@@ -20,12 +27,21 @@
 <ul id="route">
     @foreach (var direction in Model.Directions)
     {
-        switch(direction)
+        switch (direction)
         {
-            case Exercise2.Direction.Left: 
-                <li>Left</li> 
-            break;
+            case Exercise2.Direction.Left:
+                <li>Left</li>
+                break;
             //voeg de andere richtingen toe!
-        } 
+            case Exercise2.Direction.Right:
+                <li>Right</li>
+                break;
+            case Exercise2.Direction.Forward:
+                <li>Forward</li>
+                break;
+            case Exercise2.Direction.Backward:
+                <li>Backward</li>
+                break;
+        }
     }
 </ul>

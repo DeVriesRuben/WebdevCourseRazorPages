@@ -6,16 +6,16 @@
 }
 
 <div>
-    <p id="result">###</p>
+    <p id="result">@Model.Result</p>
 </div>
 
 <form method="post" id="calculatorForm">
-    <input type="hidden" ###>
-    <input type="text" id="input" name="input">
-    <button name="addBtn" id="addBtn" type="submit" ###>+</button>
-    <button name="subBtn" id="subBtn" type="submit" ###>-</button>
-    <button name="mulBtn" id="mulBtn" type="submit" ###>*</button>
-    <button name="divBtn" id="divBtn" type="submit" ###>/</button>
+    <input type="hidden" name="input1" value="@Model.Input1">
+    <input asp-for="Input2">
+    <button type="submit" asp-page-handler="Add">+</button>
+    <button type="submit" asp-page-handler="Sub">-</button>
+    <button type="submit" asp-page-handler="Mult">*</button>
+    <button type="submit" asp-page-handler="Div">/</button>
 </form>
 
 
